@@ -6,7 +6,7 @@ type ContainerType = {
 };
 
 export const Container = styled.div<ContainerType>`
-  max-width: 1080px;
+  width: 1080px;
   height: 100%;
   margin: 0 auto;
   display: flex;
