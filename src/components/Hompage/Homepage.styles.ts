@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const HomepageContainer = styled.section`
-  width: 100vw;
+  width: 100%;
   min-height: calc(100vh - 70px);
   height: auto;
   display: flex;
@@ -51,4 +51,13 @@ export const FilterSelect = styled.select`
   border: none;
   border-radius: 3px;
   padding-left: 10px;
+`;
+
+export const CountriesArea = styled.section`
+  width: 100%;
+  height: 500px;
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 `;
