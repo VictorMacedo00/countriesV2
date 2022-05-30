@@ -9,6 +9,7 @@ import {
 } from "./Homepage.styles";
 import {
   GET_ALL_COUNTRIES,
+  GET_COUNTRIE,
   GET_COUNTRIES_AT_CONTINENT,
   GetAllCountries,
 } from "../../api/api";
@@ -16,19 +17,31 @@ import React, { useEffect, useState } from "react";
 
 import Card from "../Card/Card";
 import { Container } from "../../GlobalStyles.styles";
+import { ReactComponent as SearchIcon } from "./../../Assets/Icons/searchIcon.svg";
 import { useFetch } from "../../hooks/useFetch";
 
 const Homepage: React.FC = () => {
   const { data, loading, request } = useFetch<GetAllCountries[]>();
 
   type Search = {
-    search: string;
+    countrie: string;
   };
 
-  const [search, setSearch] = useState<Search>();
+  const [search, setSearch] = useState<Search | undefined>();
 
   const getCountriesAtContinent = async (continent: string) => {
     request(GET_COUNTRIES_AT_CONTINENT(continent));
+  };
+
+  const handleSubmit = (event: any) => {
+    event.preventDefault();
+    console.log(search?.countrie);
+    if (search === undefined) {
+      alert("Insira um valor válido");
+    } else {
+      request(GET_COUNTRIE(search.countrie));
+      setSearch(undefined);
+    }
   };
 
   useEffect(() => {
@@ -48,9 +61,16 @@ const Homepage: React.FC = () => {
           justifyContent={"space-between"}
         >
           <FilterArea>
-            <SearchForm>
-              <SearchButton>O</SearchButton>
-              <SearchInput placeholder="Search for a countrie..." />
+            <SearchForm onSubmit={handleSubmit}>
+              <SearchButton>
+                <SearchIcon />
+              </SearchButton>
+              <SearchInput
+                onChange={(event) =>
+                  setSearch({ ...search, countrie: event.currentTarget.value })
+                }
+                placeholder="Search for a countrie..."
+              />
             </SearchForm>
             <FilterSelect
               onChange={({ target }) => getCountriesAtContinent(target.value)}
