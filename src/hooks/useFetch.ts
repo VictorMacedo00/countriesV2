@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import { useCallback, useState } from "react";
 
 type Fetch = {
   url: string;
@@ -11,7 +11,7 @@ type Return<T> = {
   request: (fetch: Fetch) => void;
 };
 
-export const useFetch = <T,>(): Return<T> => {
+export const useFetch = <T>(): Return<T> => {
   const [data, setData] = useState<T>();
   const [loading, setLoading] = useState(false);
 
@@ -23,7 +23,6 @@ export const useFetch = <T,>(): Return<T> => {
     } catch {
       setData(undefined);
     } finally {
-      console.log(data);
       setLoading(false);
     }
   }, []);

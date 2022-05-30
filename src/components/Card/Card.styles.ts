@@ -17,7 +17,7 @@ export const CardContainer = styled.div`
   }
 `;
 
-type FlagBackground = {
+export type FlagBackground = {
   backgroundImage: string;
 };
 

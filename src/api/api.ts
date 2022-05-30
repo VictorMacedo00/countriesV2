@@ -22,6 +22,34 @@ export function GET_ALL_COUNTRIES() {
   };
 }
 
+type Currencie = {
+  code: string;
+  name: string;
+  symbol: string;
+};
+
+type Language = {
+  iso639_1: string;
+  iso639_2: string;
+  name: string;
+  nativeName: string;
+};
+
+export type GetCountrie = {
+  capital: string;
+  flags: Flags;
+  name: string;
+  population: number;
+  region: string;
+
+  borders: string[];
+  nativeName: string;
+  subregion: string;
+  topLevelDomain: string;
+  currencies: Currencie[];
+  languages: Language[];
+};
+
 export function GET_COUNTRIE(name: string) {
   return {
     url:
@@ -32,6 +60,10 @@ export function GET_COUNTRIE(name: string) {
     },
   };
 }
+
+export type GetCountrieAtCioc = {
+  name: string;
+};
 
 export function GET_COUNTRIE_AT_CIOC(cioc: string) {
   return {
