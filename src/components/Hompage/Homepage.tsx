@@ -7,8 +7,12 @@ import {
   SearchForm,
   SearchInput,
 } from "./Homepage.styles";
-import { GET_ALL_COUNTRIES, GetAllCountries } from "../../api/api";
-import React, { useEffect } from "react";
+import {
+  GET_ALL_COUNTRIES,
+  GET_COUNTRIES_AT_CONTINENT,
+  GetAllCountries,
+} from "../../api/api";
+import React, { useEffect, useState } from "react";
 
 import Card from "../Card/Card";
 import { Container } from "../../GlobalStyles.styles";
@@ -16,6 +20,16 @@ import { useFetch } from "../../hooks/useFetch";
 
 const Homepage: React.FC = () => {
   const { data, loading, request } = useFetch<GetAllCountries[]>();
+
+  type Search = {
+    search: string;
+  };
+
+  const [search, setSearch] = useState<Search>();
+
+  const getCountriesAtContinent = async (continent: string) => {
+    request(GET_COUNTRIES_AT_CONTINENT(continent));
+  };
 
   useEffect(() => {
     request(GET_ALL_COUNTRIES());
@@ -38,12 +52,14 @@ const Homepage: React.FC = () => {
               <SearchButton>O</SearchButton>
               <SearchInput placeholder="Search for a countrie..." />
             </SearchForm>
-            <FilterSelect>
+            <FilterSelect
+              onChange={({ target }) => getCountriesAtContinent(target.value)}
+            >
               <option selected disabled>
                 Filter by Region
               </option>
               <option value="africa">África</option>
-              <option value="america">Américas</option>
+              <option value="americas">Américas</option>
               <option value="asia">Asia</option>
               <option value="europe">Europe</option>
               <option value="oceania">Oceania</option>
