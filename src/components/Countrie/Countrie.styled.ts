@@ -80,13 +80,13 @@ export const Borders = styled.div`
 `;
 
 export const BackButton = styled.button`
-  width: 100px;
+  width: 150px;
   height: 40px;
   border: none;
   margin-top: 150px;
   border-radius: 3px;
   box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.1);
-  background-color: ${({ theme }) => theme.background};
+  background-color: ${({ theme }) => theme.elements};
   color: ${({ theme }) => theme.text};
   cursor: pointer;
   transition: all 0.2s;

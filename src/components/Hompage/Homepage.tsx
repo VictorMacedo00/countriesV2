@@ -17,6 +17,7 @@ import React, { useEffect, useState } from "react";
 
 import Card from "../Card/Card";
 import { Container } from "../../GlobalStyles.styles";
+import Loading from "../Loading/Loading";
 import { ReactComponent as SearchIcon } from "./../../Assets/Icons/searchIcon.svg";
 import { useFetch } from "../../hooks/useFetch";
 
@@ -54,11 +55,7 @@ const Homepage = (props: Theme) => {
 
   return (
     <HomepageContainer>
-      {loading ? (
-        <>
-          <h1>Carregando...</h1>
-        </>
-      ) : (
+      <Loading loading={loading}>
         <Container
           flexDirection="column"
           alignItems="center"
@@ -104,7 +101,7 @@ const Homepage = (props: Theme) => {
               ))}
           </CountriesArea>
         </Container>
-      )}
+      </Loading>
     </HomepageContainer>
   );
 };

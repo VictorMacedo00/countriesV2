@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Countrie from "./components/Countrie/Countrie";
 import Header from "./components/Header/Header";
 import Homepage from "./components/Hompage/Homepage";
+import Loading from "./components/Loading/Loading";
 import { ThemeProvider } from "styled-components";
 import { Themes } from "./themes";
 import { useState } from "react";

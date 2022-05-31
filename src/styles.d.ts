@@ -6,5 +6,6 @@ declare module "styled-components" {
     text: string;
     elements: string;
     input: string;
+    loading: string;
   }
 }
