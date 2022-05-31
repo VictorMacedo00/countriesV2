@@ -19,12 +19,13 @@ export const FilterArea = styled.section`
 `;
 
 export const SearchForm = styled.form`
+  width: 70%;
   height: 100%;
   display: flex;
 `;
 
 export const SearchInput = styled.input`
-  width: 500px;
+  width: 70%;
   height: 100%;
   border: none;
   outline: none;
@@ -64,6 +65,8 @@ export const CountriesArea = styled.section`
   margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
+  justify-items: flex-start;
   justify-content: space-between;
+  align-content: center;
   background-color: ${({ theme }) => theme.background};
 `;

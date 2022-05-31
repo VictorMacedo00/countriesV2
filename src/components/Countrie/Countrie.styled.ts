@@ -13,6 +13,7 @@ export const CountrieGrid = styled.div`
   display: grid;
   align-items: center;
   grid-template-columns: 650px 1fr;
+  grid-template-rows: 40px auto;
 `;
 
 export const CountrieFlag = styled.div<FlagBackground>`
@@ -76,4 +77,21 @@ export const Borders = styled.div`
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
+`;
+
+export const BackButton = styled.button`
+  width: 100px;
+  height: 40px;
+  border: none;
+  margin-top: 150px;
+  border-radius: 3px;
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.1);
+  background-color: ${({ theme }) => theme.background};
+  color: ${({ theme }) => theme.text};
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+  }
 `;

@@ -1,4 +1,5 @@
 import {
+  BackButton,
   BorderCountries,
   BorderTitle,
   Borders,
@@ -12,13 +13,13 @@ import {
   InfosSecondGroup,
 } from "./Countrie.styled";
 import { GET_COUNTRIE, GetCountrie } from "../../api/api";
+import { Link, useParams } from "react-router-dom";
 import React, { useEffect } from "react";
 
 import Border from "../Border/Border";
 import { Container } from "../../GlobalStyles.styles";
 import { Text } from "./../../GlobalStyles.styles";
 import { useFetch } from "../../hooks/useFetch";
-import { useParams } from "react-router-dom";
 
 const Countrie = () => {
   const { name } = useParams<{ name: string }>();
@@ -36,6 +37,9 @@ const Countrie = () => {
       {data ? (
         <Container alignItems="center" justifyContent="space-between">
           <CountrieGrid>
+            <Link to={"/"}>
+              <BackButton>← Back</BackButton>
+            </Link>
             <CountrieFlag backgroundImage={data[0].flags.svg}></CountrieFlag>
             <CountrieInfos>
               <CountrieName>
