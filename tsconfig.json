@@ -24,5 +24,8 @@
     "src",
     "src/custom.d.ts",
     "src/*"
+  ],
+  "files": [
+    "src/styles.d.ts"
   ]
 }

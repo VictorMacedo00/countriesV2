@@ -4,6 +4,7 @@ import styled from "styled-components";
 export const CountrieContainer = styled.div`
   width: 100%;
   height: calc(100vh - 70px);
+  background-color: ${({ theme }) => theme.background};
 `;
 
 export const CountrieGrid = styled.div`

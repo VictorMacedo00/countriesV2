@@ -17,7 +17,6 @@ import React, { useEffect } from "react";
 import Border from "../Border/Border";
 import { Container } from "../../GlobalStyles.styles";
 import { Text } from "./../../GlobalStyles.styles";
-import { url } from "inspector";
 import { useFetch } from "../../hooks/useFetch";
 import { useParams } from "react-router-dom";
 

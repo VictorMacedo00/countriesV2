@@ -6,7 +6,7 @@ export const HomepageContainer = styled.section`
   height: auto;
   display: flex;
   justify-content: space-between;
-  background-color: #fafafa;
+  background-color: ${({ theme }) => theme.background};
 `;
 
 export const FilterArea = styled.section`
@@ -30,9 +30,11 @@ export const SearchInput = styled.input`
   outline: none;
   padding-left: 10px;
   border-radius: 0 3px 3px 0;
+  background-color: ${({ theme }) => theme.elements};
+  color: ${({ theme }) => theme.text};
 
   ::placeholder {
-    color: rgba(0, 0, 0, 0.6);
+    color: ${({ theme }) => theme.text};
   }
 `;
 
@@ -43,6 +45,7 @@ export const SearchButton = styled.button`
   background-color: #fff;
   cursor: pointer;
   border-radius: 3px 0 0 3px;
+  background-color: ${({ theme }) => theme.elements};
 `;
 
 export const FilterSelect = styled.select`
@@ -51,13 +54,16 @@ export const FilterSelect = styled.select`
   border: none;
   border-radius: 3px;
   padding-left: 10px;
+  background-color: ${({ theme }) => theme.elements};
+  color: ${({ theme }) => theme.text};
 `;
 
 export const CountriesArea = styled.section`
   width: 100%;
-  height: 500px;
+  height: auto;
   margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  background-color: ${({ theme }) => theme.background};
 `;

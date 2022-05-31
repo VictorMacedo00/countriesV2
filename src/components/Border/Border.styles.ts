@@ -5,9 +5,10 @@ export const BorderCard = styled.div`
   height: fit-content;
   display: flex;
   flex-wrap: wrap;
-  border-radius: 5px;
+  border-radius: 2px;
   padding: 10px;
   margin: 10px;
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.elements};
+  color: ${({ theme }) => theme.text};
   box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.1);
 `;

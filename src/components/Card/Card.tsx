@@ -25,14 +25,29 @@ const Card = ({
         <Text color="#000" fontSize="1.4rem" fontWeight="bold">
           {name}
         </Text>
-        <Text color="#000" fontSize="1rem" fontWeight="bold">
-          Population: {population}
+        <Text
+          color="#000"
+          fontSize="1rem"
+          fontWeight="normal"
+          before="Population: "
+        >
+          {population}
         </Text>
-        <Text color="#000" fontSize="1rem" fontWeight="bold">
-          Region: {region}
+        <Text
+          color="#000"
+          fontSize="1rem"
+          fontWeight="normal"
+          before="Region: "
+        >
+          {region}
         </Text>
-        <Text color="#000" fontSize="1rem" fontWeight="bold">
-          Capital: {capital}
+        <Text
+          color="#000"
+          fontSize="1rem"
+          fontWeight="normal"
+          before="Capital: "
+        >
+          {capital}
         </Text>
       </CountrieInfos>
     </CardContainer>

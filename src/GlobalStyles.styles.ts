@@ -27,7 +27,7 @@ type TextType = {
 
 export const Text = styled.p<TextType>`
   font-size: ${(props) => props.fontSize};
-  color: ${(props) => props.color};
+  color: ${({ theme }) => theme.text};
   font-weight: ${(props) => props.fontWeight};
   margin: ${(props) => props.margin};
 

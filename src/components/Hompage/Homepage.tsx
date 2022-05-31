@@ -20,7 +20,11 @@ import { Container } from "../../GlobalStyles.styles";
 import { ReactComponent as SearchIcon } from "./../../Assets/Icons/searchIcon.svg";
 import { useFetch } from "../../hooks/useFetch";
 
-const Homepage: React.FC = () => {
+type Theme = {
+  theme: boolean;
+};
+
+const Homepage = (props: Theme) => {
   const { data, loading, request } = useFetch<GetAllCountries[]>();
 
   type Search = {
@@ -63,7 +67,9 @@ const Homepage: React.FC = () => {
           <FilterArea>
             <SearchForm onSubmit={handleSubmit}>
               <SearchButton>
-                <SearchIcon />
+                <SearchIcon
+                  fill={props.theme ? "hsl(200, 15%, 8%)" : "hsl(0, 0%, 100%)"}
+                />
               </SearchButton>
               <SearchInput
                 onChange={(event) =>

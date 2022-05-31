@@ -6,7 +6,7 @@ export const CardContainer = styled.div`
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.elements};
   margin: 0 0 30px 0;
   border-radius: 3px;
   transition: all 0.2s;
